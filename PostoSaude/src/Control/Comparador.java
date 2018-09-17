@@ -1,6 +1,6 @@
 package Control;
 
-import PostoSaude.Vacinacao;
+import Model.Vacinacao;
 import java.util.Comparator;
 
 public class Comparador {
