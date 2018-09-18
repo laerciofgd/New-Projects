@@ -58,7 +58,20 @@ public class Add {
     }
 
     public static HashMap<Integer, Vacina> removeVacina() {
-
+        if (!vacinas.isEmpty()) {
+            mostraVacinas();
+            System.out.print("digite o código da vacina: ");
+            int codV = sc.nextInt();
+            System.out.println("");
+            if (vacinas.containsKey(codV)) {
+                vacinas.remove(codV);
+                System.out.println("Vacina removida com sucesso!\n");
+            } else {
+                System.out.println("Vacina não cadastrada!\n");
+            }
+        } else {
+            System.out.println("Nenhuma vacina cadastrada!\n");
+        }
         return vacinas;
     }
 
@@ -98,8 +111,8 @@ public class Add {
             System.out.print("digite o código da vacina: ");
             int codV = sc.nextInt();
             if (vacinas.containsKey(codV)) {
-
                 vacinacoes.add(new Vacinacao(local, vacinas.get(codV)));
+                System.out.println("Vacina adicionada a ao registro de vacinas tomadas!\n");
             } else {
                 System.out.println("Vacina não cadastrada!");
             }
@@ -128,6 +141,5 @@ public class Add {
         return enderecos;
 
     }
-    
 
 }

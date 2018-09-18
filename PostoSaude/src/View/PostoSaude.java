@@ -22,9 +22,10 @@ public class PostoSaude {
             System.out.println("_____ Posto de saúde _____\n");
             System.out.println("1 - Cadastrar paciente");
             System.out.println("2 - adicionar vacina à campanha");
-            System.out.println("REMOVER VACINA");
-            System.out.println("3 - Mostrar lista de vacinas do posto");
-            System.out.println("4 - Mostar lista de vacinas tomadas");
+            System.out.println("3 - Remover vacina da campanha");
+            System.out.println("4 - Mostrar lista de vacinas do posto");
+            System.out.println("5 - Mostar lista de vacinas tomadas");
+            System.out.println("0 - Sair");
             System.out.print("Digite uma opção: ");
             op = sc.nextInt();
             System.out.println("");
@@ -64,10 +65,14 @@ public class PostoSaude {
                     break;
                 }
                 case 3: {
-                    Add.mostraVacinas();
+                    Add.removeVacina();
                     break;
                 }
                 case 4: {
+                    Add.mostraVacinas();
+                    break;
+                }
+                case 5: {
                     Add.mostraVacinacoes();
                     break;
                 }
