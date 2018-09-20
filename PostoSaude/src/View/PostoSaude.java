@@ -47,17 +47,14 @@ public class PostoSaude {
                             case 1: {
                                 Add.addVacinacao();
                                 break;
-                            }
-                            case 2: {
-                                op2 = 0;
-                                break;
-                            }
+                                // Fazer controle pela periodicidade caso o usuário já tenha tomado a vacina
+                            }        
                             default: {
                                 System.out.println("Operação inválida\n");
                                 break;
                             }
                         }
-                    } while (op2 != 0);
+                    } while (op2 != 2);
                     break;
                 }
                 case 2: {
@@ -73,6 +70,33 @@ public class PostoSaude {
                     break;
                 }
                 case 5: {
+                    Add.mostrarCidadoes();
+                    
+                    do {
+
+                        System.out.println("\nDeseja ver o registro de vacinas do paciente ?");
+                        System.out.println("1 - Sim");
+                        System.out.println("2 - Não");
+                        System.out.print("Digite uma opção: ");
+                        op2 = sc.nextInt();
+
+                        switch (op2) {
+                            case 1: {
+                                Add.addVacinacao();
+                                break;
+                                // Fazer controle pela periodicidade caso o usuário já tenha tomado a vacina
+                            }
+                            case 2: {
+                                op2 = 0;
+                                break;
+                            }
+                            default: {
+                                System.out.println("Operação inválida\n");
+                                break;
+                            }
+                        }
+                    } while (op2 != 2);
+                    
                     Add.mostraVacinacoes();
                     break;
                 }

@@ -15,8 +15,9 @@ public class Add {
     static HashMap<Integer, Vacina> vacinas = new HashMap<>();
     static ArrayList<Vacinacao> vacinacoes = new ArrayList<>();
     static ArrayList<Endereco> enderecos = new ArrayList<>();
+    static ArrayList<Cidadao> cidadoes = new ArrayList<>();
 
-    public static Cidadao addCidadao() {
+    public static ArrayList<Cidadao> addCidadao() {
 
         System.out.print("Nome: ");
         String nome = sc.nextLine();
@@ -31,7 +32,7 @@ public class Add {
         System.out.print("Digite a altura: ");
         float altura = sc.nextFloat();
         System.out.println("");
-        Cidadao cidadoes = new Cidadao(nome, sexo, nacionalidade, dataNasc, peso, altura, enderecos, vacinas);
+        cidadoes.add(new Cidadao(nome, sexo, nacionalidade, dataNasc, peso, altura, enderecos, vacinas));
 
         return cidadoes;
 
@@ -139,6 +140,19 @@ public class Add {
         enderecos.add(new Endereco(uf, cidade, bairro, rua, numResid));
 
         return enderecos;
+
+    }
+
+    public static void mostrarCidadoes() {
+
+        System.out.println("\n_____ Lista de pacientes _____\n");
+        for (Cidadao cidadoes1 : cidadoes) {
+            if (!vacinacoes.isEmpty()) {
+                System.out.println(cidadoes1 + "\n");
+            } else {
+                System.out.println("Nenhum paciente cadastrado nesse posto de saúde!");
+            }
+        }
 
     }
 
